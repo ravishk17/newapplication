@@ -26,15 +26,6 @@ pgClient
   )
   .catch((err) => console.log(err));
 
-// Redis Client Setup
-const redis = require("redis");
-const redisClient = redis.createClient({
-  host: keys.redisHost,
-  port: keys.redisPort,
-  retry_strategy: () => 1000,
-});
-const redisPublisher = redisClient.duplicate();
-
 // Express route handlers
 
 app.get("/", (req, res) => {
@@ -47,7 +38,6 @@ app.get("/feed/all", async (req, res) => {
 });
 
 app.post("/feed/book", async (req, res) => {
-  const index = req.body.index;
   const name = req.body.name;
   const email = req.body.email;
   const phone = req.body.phone;

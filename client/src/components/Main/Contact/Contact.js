@@ -33,7 +33,7 @@ class Contact extends Component {
   render() {
     return (
       <div className="Contact">
-        <h1>Contact us</h1>
+        <h1>Contact Party pros</h1>
         <h2>For planning your birthday</h2>
         <h2>at: 880XXXX281</h2>
         <div>
