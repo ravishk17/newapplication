@@ -10,23 +10,23 @@ script:
   - docker run -e CI=true ravishk17/react-test npm test
 
 after_success:
-  - docker build -t ravishk17/multi-client-2 ./client
-  - docker build -t ravishk17/multi-nginx-2 ./nginx
-  - docker build -t ravishk17/multi-server-2 ./server
+  - docker build -t ravishk17/multi-client-3 ./client
+  - docker build -t ravishk17/multi-nginx-3 ./nginx
+  - docker build -t ravishk17/multi-server-3 ./server
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
-  - docker push ravishk17/multi-client-2
-  - docker push ravishk17/multi-nginx-2
-  - docker push ravishk17/multi-server-2
+  - docker push ravishk17/multi-client-3
+  - docker push ravishk17/multi-nginx-3
+  - docker push ravishk17/multi-server-3
 deploy:
   edge: true
   provider: elasticbeanstalk
   region: ap-south-1
-  app: new-application
-  env: NewApplication-env
+  app: party-pros
+  env: PartyPros-env
   bucket_name: elasticbeanstalk-ap-south-1-119094900355
-  bucket_path: app-new
+  bucket_path: partyPros
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY

@@ -3,21 +3,21 @@
   "containerDefinitions": [
     {
       "name": "client",
-      "image": "ravishk17/multi-client-2",
+      "image": "ravishk17/multi-client-3",
       "hostname": "client",
       "essential": false,
       "memory": 128
     },
     {
       "name": "server",
-      "image": "ravishk17/multi-server-2",
+      "image": "ravishk17/multi-server-3",
       "hostname": "api",
       "essential": false,
       "memory": 128
     },
     {
       "name": "nginx",
-      "image": "ravishk17/multi-nginx-2",
+      "image": "ravishk17/multi-nginx-3",
       "hostname": "nginx",
       "essential": true,
       "portMappings": [
