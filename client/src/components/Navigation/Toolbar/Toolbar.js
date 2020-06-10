@@ -2,25 +2,16 @@ import React from "react";
 
 import classes from "./Toolbar.module.css";
 
-import Logo from "../../Logo/Logo";
-
 import NavigationItems from "../NavigationItems/NavigationItems";
 
-const style = {
-  height: "250px",
-  backgroundColor: "hsl(186, 86%, 58%)",
-  alignItem: "center",
-  width: "100%",
-  overflow: "auto",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-};
-
 const toolbar = (props) => (
-  <div style={style}>
-    <header className={classes.Toolbar}>
-      <Logo />
+  <div className={classes.Toolbar}>
+    <div className={classes.Logo}>
+      <a href="/">
+        <h1>PartyPros</h1>
+      </a>
+    </div>
+    <header className={classes.Navigation}>
       <nav>
         <NavigationItems />
       </nav>

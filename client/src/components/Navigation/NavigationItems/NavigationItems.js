@@ -11,6 +11,7 @@ class navigationItems extends Component {
           <NavigationItem link="/">Home</NavigationItem>
           <NavigationItem link="/gallery">Gallery</NavigationItem>
           <NavigationItem link="/contact">Contact Us</NavigationItem>
+          <NavigationItem link="/requests">Bookings</NavigationItem>
         </ul>
       </div>
     );

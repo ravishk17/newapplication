@@ -1,7 +1,8 @@
 .Events {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   padding: 20px;
   height: 100%;
-  border: 2px solid gainsboro;
+  /* border: 2px solid gainsboro; */
+  /* flex: 1 1 30%; */
 }

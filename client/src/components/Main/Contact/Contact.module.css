@@ -1,22 +1,44 @@
-.Contact {
-  border: 2px solid green;
-}
-
 .form {
   width: 30%;
   padding: 20px;
-  align-items: center;
   margin: auto;
-  border: 2px solid black;
 }
 
+.form h1 {
+  font-family: Metal Mania, cursive;
+}
 .form input {
   width: 100%;
   padding: 12px 20px;
-  margin: 8px 0;
+  margin: 10px 0;
   box-sizing: border-box;
+  border-radius: 10px;
 }
 
-.form label {
-  text-align: left;
+.card {
+  box-shadow: 0 4px 8px 0 rgba(250, 50, 100, 0.8);
+  max-width: 300px;
+  text-align: center;
+  font-family: arial;
+  padding: 30px;
+}
+
+.card img {
+  border-radius: 10px 10px 10px 10px;
+  height: 100%;
+  width: 100%;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  border-radius: 7px;
+  margin: 13px 0;
 }
