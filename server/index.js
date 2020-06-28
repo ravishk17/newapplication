@@ -22,7 +22,7 @@ pgClient.on("error", () => console.log("Lost PG connection"));
 
 pgClient
   .query(
-    "CREATE TABLE IF NOT EXISTS booking (name VARCHAR(30), email VARCHAR(255), phone INT, location VARCHAR(255), other VARCHAR(255))"
+    "CREATE TABLE IF NOT EXISTS booking (id SERIAL PRIMARY KEY, name VARCHAR(30), email VARCHAR(255), phone TEXT, location VARCHAR(255), other VARCHAR(255))"
   )
   .catch((err) => console.log(err));
 
@@ -35,6 +35,18 @@ app.get("/", (req, res) => {
 app.get("/feed/all", async (req, res) => {
   const values = await pgClient.query("SELECT * from booking");
   res.send(values.rows);
+});
+
+app.delete("/feed/delete/:id", async (req, res, next) => {
+  try {
+    const result = await pgClient.query("DELETE from booking WHERE id=$1", [
+      req.params.id,
+    ]);
+
+    return res.status(200).json({ message: "Deleted" });
+  } catch (err) {
+    return next(err);
+  }
 });
 
 app.post("/feed/book", async (req, res) => {
